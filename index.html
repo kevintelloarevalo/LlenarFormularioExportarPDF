@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="formulario-estilo.css" rel="stylesheet">
+    <script src="jspdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 container-form">
+                <div class="foto">
+                    <img src="" alt="FotoLogo">
+                </div>
+                <h3><center>Formulario de inscripción en PDF</center></h3>
+                <hr>
+                <form id="form" onsubmit="validarFormulario(); return false;" novalidate> <!--JS Validación----->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label" style="font-weight: 700;">Nombres:</label>
+                            <input type="text" class="form-control" id="nombre">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="apellido" class="form-label" style="font-weight: 700;">Apellidos:</label>
+                            <input type="text" class="form-control" id="apellido">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="email" class="form-label" style="font-weight: 700;">Correo electronico:</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="dni" class="form-label" style="font-weight: 700;">DNI:</label>
+                            <input type="text" class="form-control" id="dni">
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="celular" class="form-label" style="font-weight: 700;">Celular:</label>
+                            <input type="text" class="form-control" id="celular">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono" class="form-label" style="font-weight: 700;">Telefono:</label>
+                            <input type="text" class="form-control" id="telefono">
+                        </div>
+                    </div>
+                    <!---
+                    <div class="col-md-12">
+                        <label for="direccion" class="form-label">Direccion</label>
+                        <input type="text" class="form-control" id="direccion">
+                    </div>--->
+                    <br>
+
+                    <div class="row mb-3">
+
+                        <div class="col-md-2">
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="fecha1" class="form-check-input" id="fecha1-si" value="1">
+                                    <label for="fecha1-si" class="form-check-label">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="fecha1" class="form-check-input" id="fecha1-no" value="0"
+                                        checked>
+                                    <label for="fecha1-no" class="form-check-label">No</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input type= "hidden"  type="radio" name="fecha2" class="form-check-input" id="fecha2-si" value="1">
+                                    <label for="fecha2-si" class="form-check-label">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="fecha2" class="form-check-input" id="fecha2-no" value="0"
+                                        checked>
+                                    <label for="fecha2-no" class="form-check-label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="fecha3" class="form-check-input" id="fecha3-si" value="1">
+                                    <label for="fecha3-si" class="form-check-label">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="fecha3" class="form-check-input" id="fecha3-no" value="0"
+                                        checked>
+                                    <label for="fecha3-no" class="form-check-label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="fecha4" class="form-check-input" id="fecha4-si" value="1">
+                                    <label for="fecha4-si" class="form-check-label">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="fecha4" class="form-check-input" id="fecha4-no" value="0"
+                                        checked>
+                                    <label for="fecha4-no" class="form-check-label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div>
+
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="fecha5" class="form-check-input" id="fecha5-si" value="1">
+                                    <label for="fecha5-si" class="form-check-label">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="fecha5" class="form-check-input" id="fecha5-no" value="0"
+                                        checked>
+                                    <label for="fecha5-no" class="form-check-label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-3">
+
+                    <span class="d-block pb-2" style="font-weight: 700;">Firma digital en el centro:</span>
+                    <div class="signature mb-2" style="width: 100%; height: 200px;">
+                        <canvas id="signature-canvas"
+                            style="border: 3px dashed red; width: 100%; height: 200px;"></canvas>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mb-4" id="generar-pdf" disabled>Generar PDF</button>
+
+
+                </form>
+            </div>
+        </div>
+
+        <div class="contacto">
+            <div class="contacto-full">
+                <div class="contenedor-contactame">
+                    <!---<p class="contact-subtitle">Contacto</p>--->
+                    <div class="center-text">
+                    <h5 style="font-size: 30px;" >¿Cómo podemos ayudarte?</h5>
+                    <h3 style="font-size: 20px;">Te responderemos a la brevedad</h3>
+                    </div>
+                    <div class="boton-contacto">
+                    <a class="btn-cel" href="https://api.whatsapp.com/send?phone=51917469110&text=Hola%20tengo%20problemas%20para%20llenar%20el%20formulario" target="_blank">Contáctanos</a>
+                    </div>
+                </div>
+                <div class="contenedor-contactame">
+                    <!---<p class="contact-subtitle">Contacto</p>--->
+                    <div class="center-text">
+                    <h3 style="font-size: 30px;">Envios de PDF Botón SIMPLE</h3>
+                    <br>
+                    </div>
+                    <div class="boton-contacto">
+                    <a class="btn-cel" href="https://api.whatsapp.com/send?phone=51917469110&text=Hola%20te%20envio" target="_blank">Contáctanos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+// Obtener referencias a los campos y al botón
+var nombreInput = document.getElementById('nombre');
+var apellidoInput = document.getElementById('apellido');
+var emailInput = document.getElementById('email');
+var dniInput = document.getElementById('dni');
+var celularInput = document.getElementById('celular');
+var telefonoInput = document.getElementById('telefono');
+var generarPDFButton = document.getElementById('generar-pdf');
+
+// Función para comprobar si todos los campos están llenos
+function checkCamposLlenos() {
+  return (
+    nombreInput.value !== '' &&
+    apellidoInput.value !== '' &&
+    emailInput.value !== '' &&
+    dniInput.value !== '' &&
+    celularInput.value !== '' &&
+    telefonoInput.value !== ''
+  );
+}
+
+// Función para habilitar o deshabilitar el botón según el estado de los campos
+function toggleGenerarPDFButton() {
+  generarPDFButton.disabled = !checkCamposLlenos();
+}
+
+// Agregar el evento input a los campos para verificar los cambios
+nombreInput.addEventListener('input', toggleGenerarPDFButton);
+apellidoInput.addEventListener('input', toggleGenerarPDFButton);
+emailInput.addEventListener('input', toggleGenerarPDFButton);
+dniInput.addEventListener('input', toggleGenerarPDFButton);
+celularInput.addEventListener('input', toggleGenerarPDFButton);
+telefonoInput.addEventListener('input', toggleGenerarPDFButton);
+
+</script>
+
+<script>
+
+var generarPDFButton = document.getElementById("generar-pdf");
+var formElement = document.getElementById("form"); // Reemplaza "tu-formulario" con el ID real de tu formulario
+var signatureCanvas = document.getElementById("signature-canvas");
+
+generarPDFButton.disabled = true;
+
+generarPDFButton.addEventListener("click", function() {
+  // código para guardar el PDF
+
+  setTimeout(function() {
+    Swal.fire({ //alerta
+      title: 'No olvides de Enviar el PDF de Inscripción a tu asesor',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    }).then(function() {
+      // Después de hacer clic en "OK" de la alerta, reiniciar el formulario y la firma digital
+      formElement.reset();
+      var signatureContext = signatureCanvas.getContext("2d");
+      signatureContext.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+      
+      // Abrir enlace en una nueva pestaña del navegador
+      var enlace = "https://api.whatsapp.com/send?phone=51917469110&text=Hola%20te%20envio%20mi%20formulario";
+      window.open(enlace, "_blank");
+    });
+  }, 5000);
+});
+
+</script>
+
+</html>

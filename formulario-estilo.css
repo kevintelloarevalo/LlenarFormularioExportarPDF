@@ -1,0 +1,96 @@
+body{
+    background-color: #eceef3;
+}
+
+.container-form h3{
+    color: #f8a303;
+}
+
+.col-md-2 {
+    display: none;
+}
+
+
+  /*Contactame*/
+  .contacto {
+    background-color: #eceef3;
+    padding: 30px 13%;
+  }
+  
+  .contacto-full {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .contenedor-contactame {
+    flex: 1;
+  }
+  
+  .center-text {
+    text-align: center;
+  }
+  
+  .contact-subtitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .boton-contacto {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .boton-contacto a {
+    display: inline-block;
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: #128C7E;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 25px;
+  }
+  
+  .contacto-imagen img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+/*Responsive*/
+
+@media (max-width: 1410px){
+    section{
+        padding: 70px 3%;
+        transition: .2s;
+    }
+    container-study{
+        padding: 70px 3%;
+        transition: .2s;
+    }
+}
+
+
+@media (min-width:360px) {
+
+    .boton-info{
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+}
+@media (min-width:360px) {
+
+    .boton-contacto{
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+}
+@media (min-width:365px) {
+
+    .boton-info{
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+}

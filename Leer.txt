@@ -1,0 +1,14 @@
+Programa para rellenar un formulario en formato imagen y exportarlo en PDF.
+
+Se puede crear firma digital.
+Se puede rellenar los campos vacios de la imagen
+Se puede incluir imagen (sellos, firmas, logos) a la imagen
+
+Herramientas:
+
+Bootstrap
+SweetAlert
+Libreria JSPDF
+
+
+Espero sea de mucha utilidad, gracias.
